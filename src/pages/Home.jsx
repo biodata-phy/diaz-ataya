@@ -89,7 +89,7 @@ export default function Home() {
                                         background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
                                     }}>
                                         <img
-                                            src="landing.webp"
+                                            src={`${import.meta.env.BASE_URL}landing.webp`}
                                             alt="Diaz Ataya"
                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         />

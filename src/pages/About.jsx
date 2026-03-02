@@ -26,7 +26,7 @@ const educationHistory = [
         period: '2023 - Present',
         location: 'Depok, Indonesia',
         description: 'Specializing in contemporary interpretations of Quranic texts and their application in addressing social and environmental issues. Involved in research projects regarding religious literacy and ecological theology.',
-        image: 'uiii_campus_architecture_1772457294478.png',
+        image: `${import.meta.env.BASE_URL}uiii_campus_architecture_1772457294478.png`,
         logoName: 'UIII'
     },
     {
@@ -171,7 +171,7 @@ export default function About() {
                                     background: 'var(--color-bg-secondary)', border: '4px solid var(--color-accent)',
                                     overflow: 'hidden', boxShadow: 'var(--shadow-lg)'
                                 }}>
-                                    <img src="about.webp" alt="Diaz Ataya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={`${import.meta.env.BASE_URL}about.webp`} alt="Diaz Ataya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                             </div>
                             <div style={{ flex: 1 }}>
