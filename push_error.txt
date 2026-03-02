@@ -1,0 +1,13 @@
+﻿git : remote: Permission to biodata-phy/diaz-ataya.git 
+denied to nuclear-boy.
+At line:1 char:1
++ git push origin main 2>&1 | Out-File push_error.txt 
+-Encoding utf8; G ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (remote: Pe 
+   rmiss...to nuclear-boy.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+fatal: unable to access 
+'https://github.com/biodata-phy/diaz-ataya.git/': The 
+requested URL returned error: 403
