@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/diaz-ataya/', // <--- TAMBAHKAN BARIS INI
+  base: './diaz-ataya/', // <--- TAMBAHKAN BARIS INI
 })
