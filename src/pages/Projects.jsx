@@ -129,9 +129,9 @@ export default function Projects() {
                                     <div style={{ color: 'var(--color-accent)', opacity: 0.4, marginBottom: 16 }}>
                                         {project.icon}
                                     </div>
-                                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', marginBottom: 12 }}>
+                                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', marginBottom: 12 }}>
                                         {project.title}
-                                    </h3>
+                                    </h2>
                                     <p style={{ fontSize: '0.95rem', lineHeight: 1.7, flex: 1, marginBottom: 20 }}>
                                         {project.description}
                                     </p>

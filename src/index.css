@@ -22,15 +22,15 @@
   --color-border-hover: rgba(0, 0, 0, 0.12);
 
   --color-text-primary: #0a0a0a;
-  --color-text-secondary: #525252;
-  --color-text-tertiary: #a3a3a3;
+  --color-text-secondary: #404040; /* Improved contrast from #525252 */
+  --color-text-tertiary: #737373;  /* Improved contrast from #a3a3a3 */
 
   --color-accent: #1B3D6D;
   --color-accent-light: #008D96;
   --color-accent-subtle: rgba(27, 61, 109, 0.08);
   --color-accent-glow: rgba(27, 61, 109, 0.15);
 
-  --color-warm: #00A99D;
+  --color-warm: #00796B; /* Darker warm color for better contrast */
   --color-warm-subtle: rgba(0, 169, 157, 0.08);
 
   --color-success: #10b981;
@@ -83,8 +83,8 @@
   --color-border-hover: rgba(255, 255, 255, 0.12);
 
   --color-text-primary: #fafafa;
-  --color-text-secondary: #a3a3a3;
-  --color-text-tertiary: #525252;
+  --color-text-secondary: #d4d4d4; /* Improved contrast from #a3a3a3 */
+  --color-text-tertiary: #a3a3a3;  /* Improved contrast from #525252 */
 
   --color-accent-subtle: rgba(27, 61, 109, 0.12);
   --color-accent-glow: rgba(27, 61, 109, 0.2);
@@ -494,7 +494,7 @@ a {
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .section {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0; /* Reduced from 2xl */
   }
 }
 

@@ -10,6 +10,9 @@ const photos = [
 ]
 
 export default function FloatingPhotos() {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+    const displayPhotos = isMobile ? photos.slice(0, 3) : photos
+
     return (
         <div style={{
             position: 'absolute',
@@ -17,54 +20,55 @@ export default function FloatingPhotos() {
             zIndex: -1,
             overflow: 'hidden',
             pointerEvents: 'none',
-            opacity: 0.2, // Very subtle
+            opacity: 0.15, // Slightly more subtle
             maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
             WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
         }}>
-            {photos.map((src, i) => (
+            {displayPhotos.map((src, i) => (
                 <motion.div
                     key={src}
                     initial={{
                         opacity: 0,
                         scale: 0.8,
-                        x: Math.random() * 100 - 50 + '%',
-                        y: Math.random() * 100 - 50 + '%'
+                        x: (i * 20) + '%',
+                        y: (Math.random() * 50 + 10) + '%'
                     }}
                     animate={{
                         opacity: 1,
                         scale: 1,
                         x: [
-                            (i * 15) + '%',
-                            ((i * 15) + 5) + '%',
-                            (i * 15) + '%'
+                            (i * 20) + '%',
+                            ((i * 20) + 5) + '%',
+                            (i * 20) + '%'
                         ],
                         y: [
-                            (Math.random() * 70) + '%',
-                            (Math.random() * 70 + 5) + '%',
-                            (Math.random() * 70) + '%'
+                            (10 + i * 10) + '%',
+                            (15 + i * 10) + '%',
+                            (10 + i * 10) + '%'
                         ],
                     }}
                     transition={{
-                        duration: 20 + i * 5,
+                        duration: 15 + i * 3,
                         repeat: Infinity,
                         repeatType: 'reverse',
                         ease: 'linear',
-                        delay: i * 2
+                        delay: i * 0.5
                     }}
                     style={{
                         position: 'absolute',
-                        width: 180,
-                        height: 180,
-                        padding: 8,
+                        width: isMobile ? 120 : 180, // Smaller on mobile
+                        height: isMobile ? 120 : 180,
+                        padding: 6,
                         background: 'white',
                         boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                         borderRadius: 4,
-                        transform: `rotate(${Math.random() * 20 - 10}deg)`
+                        rotate: (i * 5 - 10) // Consistent rotation instead of Math.random
                     }}
                 >
                     <img
                         src={src}
-                        alt="Instagram style"
+                        alt=""
+                        loading="lazy"
                         style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 2 }}
                     />
                 </motion.div>

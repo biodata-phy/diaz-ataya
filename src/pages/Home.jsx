@@ -72,9 +72,9 @@ export default function Home() {
                             </AnimatedSection>
                         </div>
 
-                        <div style={{ flexShrink: 0 }}>
+                        <div style={{ flexShrink: 0, width: '100%', maxWidth: 340, margin: '0 auto' }}>
                             <AnimatedSection delay={0.2}>
-                                <div style={{ position: 'relative', width: 340, height: 340 }}>
+                                <div style={{ position: 'relative', aspectRatio: '1/1' }}>
                                     {/* Decorative rings */}
                                     <div style={{
                                         position: 'absolute', inset: -16, borderRadius: 28,
@@ -89,8 +89,10 @@ export default function Home() {
                                         background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
                                     }}>
                                         <img
-                                            src="landing.webp"
+                                            src="landing.png"
                                             alt="Diaz Ataya"
+                                            fetchpriority="high"
+                                            loading="eager"
                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         />
                                     </div>

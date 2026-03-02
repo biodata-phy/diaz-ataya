@@ -23,7 +23,7 @@ export default function Footer() {
 
                     {/* Links */}
                     <div style={styles.linksGroup}>
-                        <h4 style={styles.linksTitle}>Navigate</h4>
+                        <h3 style={styles.linksTitle}>Navigate</h3>
                         <div style={styles.linksList}>
                             <Link to="/" style={styles.link}>Home</Link>
                             <Link to="/about" style={styles.link}>About</Link>
@@ -34,7 +34,7 @@ export default function Footer() {
 
                     {/* Social */}
                     <div style={styles.linksGroup}>
-                        <h4 style={styles.linksTitle}>Connect</h4>
+                        <h3 style={styles.linksTitle}>Connect</h3>
                         <div style={styles.linksList}>
                             <a href="#" style={styles.link}>
                                 Instagram <ArrowUpRight size={12} style={{ opacity: 0.5 }} />

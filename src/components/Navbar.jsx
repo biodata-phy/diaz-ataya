@@ -68,7 +68,7 @@ export default function Navbar({ theme, toggleTheme }) {
                         style={styles.mobileMenuBtn}
                         aria-label="Toggle menu"
                     >
-                        {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+                        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </div>
@@ -170,15 +170,16 @@ const styles = {
         padding: '0.5rem 1.25rem',
     },
     mobileMenuBtn: {
-        width: 36,
-        height: 36,
-        borderRadius: 'var(--radius-sm)',
+        width: 44,
+        height: 44,
+        borderRadius: 'var(--radius-md)',
         border: '1px solid var(--color-border)',
         background: 'transparent',
         cursor: 'pointer',
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--color-text-secondary)',
+        color: 'var(--color-text-primary)',
     },
     mobileNav: {
         overflow: 'hidden',

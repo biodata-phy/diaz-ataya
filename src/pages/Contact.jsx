@@ -57,9 +57,9 @@ export default function Contact() {
                     {/* Contact Form */}
                     <AnimatedSection delay={0.1}>
                         <div className="glass-card" style={{ padding: '2rem' }}>
-                            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', marginBottom: 24 }}>
+                            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', marginBottom: 24 }}>
                                 Send a Message
-                            </h3>
+                            </h2>
                             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                                     <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
@@ -146,10 +146,10 @@ export default function Contact() {
                                     <Mail size={20} />
                                 </div>
                                 <div>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontFamily: 'var(--font-display)', fontWeight: 600,
                                         fontSize: '0.85rem', color: 'var(--color-text-tertiary)', marginBottom: 2,
-                                    }}>Email</h4>
+                                    }}>Email</h3>
                                     <p style={{ fontWeight: 500, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>
                                         h1021221019@student.untan.ac.id
                                     </p>
@@ -167,10 +167,10 @@ export default function Contact() {
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontFamily: 'var(--font-display)', fontWeight: 600,
                                         fontSize: '0.85rem', color: 'var(--color-text-tertiary)', marginBottom: 2,
-                                    }}>Location</h4>
+                                    }}>Location</h3>
                                     <p style={{ fontWeight: 500, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>
                                         Indonesia
                                     </p>
@@ -181,9 +181,9 @@ export default function Contact() {
                         {/* Social Links */}
                         <AnimatedSection delay={0.4}>
                             <div className="glass-card" style={{ padding: '1.5rem' }}>
-                                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', marginBottom: 12 }}>
+                                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', marginBottom: 12 }}>
                                     Connect on Socials
-                                </h4>
+                                </h2>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                                     {['Instagram', 'Medium', 'LinkedIn'].map(name => (
                                         <motion.a
@@ -215,9 +215,9 @@ export default function Contact() {
                                 padding: '1.5rem', background: 'var(--color-accent-subtle)',
                                 borderRadius: 'var(--radius-lg)', border: '1px solid rgba(99, 102, 241, 0.1)',
                             }}>
-                                <h4 style={{ fontFamily: 'var(--font-display)', marginBottom: 4 }}>
+                                <h2 style={{ fontFamily: 'var(--font-display)', marginBottom: 4 }}>
                                     Looking for my CV?
-                                </h4>
+                                </h2>
                                 <p style={{ fontSize: '0.85rem', color: 'var(--color-text-tertiary)', marginBottom: 12 }}>
                                     Download my complete resume as a PDF.
                                 </p>

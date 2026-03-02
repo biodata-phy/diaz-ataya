@@ -171,7 +171,7 @@ export default function About() {
                                     background: 'var(--color-bg-secondary)', border: '4px solid var(--color-accent)',
                                     overflow: 'hidden', boxShadow: 'var(--shadow-lg)'
                                 }}>
-                                    <img src="about.webp" alt="Diaz Ataya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src="about.png" alt="Diaz Ataya" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                             </div>
                             <div style={{ flex: 1 }}>
@@ -204,10 +204,10 @@ export default function About() {
 
                         {/* Professional Skills */}
                         <AnimatedSection>
-                            <h3 style={styles.sectionTitle}>
+                            <h2 style={styles.sectionTitle}>
                                 <Star size={20} className="social-link-hover" />
                                 Technical Proficiency
-                            </h3>
+                            </h2>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                                 {skills.map((skill, i) => (
                                     <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -233,10 +233,10 @@ export default function About() {
 
                         {/* Education History */}
                         <AnimatedSection delay={0.2}>
-                            <h3 style={styles.sectionTitle}>
+                            <h2 style={styles.sectionTitle}>
                                 <GraduationCap size={20} className="social-link-hover" />
                                 Education Journey
-                            </h3>
+                            </h2>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                                 {educationHistory.map((edu) => (
                                     <motion.div
