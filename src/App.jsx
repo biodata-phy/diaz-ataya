@@ -33,20 +33,20 @@ function App() {
       <CursorGlow />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main style={{ flex: 1 }}>
-        <AnimatePresence mode="wait">
-          <Suspense fallback={
-            <div style={{ height: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="dot-pulse" style={{ scale: 1.5 }} />
-            </div>
-          }>
+        <Suspense fallback={
+          <div style={{ height: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div className="dot-pulse" style={{ scale: 1.5 }} />
+          </div>
+        }>
+          <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </Suspense>
-        </AnimatePresence>
+          </AnimatePresence>
+        </Suspense>
       </main>
       <Footer />
     </div>
