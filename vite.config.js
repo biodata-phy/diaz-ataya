@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Menggunakan base './' agar bisa diakses baik di root maupun subfolder (seperti GitHub Pages)
-  base: './',
+  // Sesuai dengan nama repository Anda di GitHub
+  base: '/diaz-ataya/',
   build: {
     rollupOptions: {
       output: {
