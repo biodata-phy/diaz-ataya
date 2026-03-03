@@ -7,17 +7,19 @@ import CountUp from '../components/CountUp'
 import FloatingPhotos from '../components/FloatingPhotos'
 
 export default function Home() {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
     return (
         <PageTransition>
             {/* Hero Section */}
-            <section style={{ position: 'relative', padding: '5rem 0 3rem' }}>
+            <section style={{ position: 'relative', padding: isMobile ? '3rem 0 1.5rem' : '5rem 0 3rem' }}>
                 <FloatingPhotos />
 
                 <div className="container">
                     <div className="hero-grid" style={{ position: 'relative', zIndex: 1 }}>
                         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
                             <AnimatedSection>
-                                <div className="badge badge-accent" style={{ marginBottom: 16 }}>
+                                <div className="badge badge-accent" style={{ marginBottom: 16, alignSelf: isMobile ? 'center' : 'flex-start' }}>
                                     <span className="dot-pulse" />
                                     Spreading Positive Vibes
                                 </div>
@@ -41,18 +43,29 @@ export default function Home() {
                             </AnimatedSection>
 
                             <AnimatedSection delay={0.3}>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8 }}>
-                                    <Link to="/about" className="btn btn-primary" style={{ padding: '0.875rem 2rem', fontSize: '1rem' }}>
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: 12,
+                                    marginTop: 8,
+                                    justifyContent: isMobile ? 'center' : 'flex-start'
+                                }}>
+                                    <Link to="/about" className="btn btn-primary" style={{ padding: isMobile ? '0.75rem 1.5rem' : '0.875rem 2rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>
                                         Learn More <ArrowRight size={18} />
                                     </Link>
-                                    <Link to="/projects" className="btn btn-outline" style={{ padding: '0.875rem 2rem', fontSize: '1rem' }}>
+                                    <Link to="/projects" className="btn btn-outline" style={{ padding: isMobile ? '0.75rem 1.5rem' : '0.875rem 2rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>
                                         My Projects
                                     </Link>
                                 </div>
                             </AnimatedSection>
 
                             <AnimatedSection delay={0.4}>
-                                <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
+                                <div style={{
+                                    display: 'flex',
+                                    gap: 16,
+                                    marginTop: 12,
+                                    justifyContent: isMobile ? 'center' : 'flex-start'
+                                }}>
                                     {[
                                         { Icon: BookOpen, title: 'Writings' },
                                         { Icon: Video, title: 'Videos' },
@@ -160,8 +173,8 @@ export default function Home() {
             <section className="section">
                 <div className="container">
                     <AnimatedSection>
-                        <div className="glass-card" style={{ padding: '3rem', overflow: 'hidden' }}>
-                            <div style={{ maxWidth: 640 }}>
+                        <div className="glass-card" style={{ padding: isMobile ? '2rem 1.5rem' : '3rem', overflow: 'hidden' }}>
+                            <div style={{ maxWidth: 640, textAlign: isMobile ? 'center' : 'left', margin: isMobile ? '0 auto' : '0' }}>
                                 <span className="badge badge-warm" style={{ marginBottom: 12 }}>
                                     My Mission
                                 </span>
@@ -178,8 +191,9 @@ export default function Home() {
                                     to="/about"
                                     style={{
                                         display: 'inline-flex', alignItems: 'center', gap: 6,
+                                        justifyContent: isMobile ? 'center' : 'flex-start',
                                         color: 'var(--color-accent)', fontWeight: 600,
-                                        fontSize: '0.9rem', marginTop: 20,
+                                        fontSize: '0.9rem', marginTop: 20, width: isMobile ? '100%' : 'auto'
                                     }}
                                 >
                                     Read my full story <ArrowRight size={16} />

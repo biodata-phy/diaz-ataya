@@ -158,12 +158,14 @@ export default function About() {
     const [selectedEdu, setSelectedEdu] = useState(null)
     const [activeTab, setActiveTab] = useState('experience')
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
     return (
         <PageTransition>
             <div className="container section" style={{ paddingBottom: '6rem' }}>
                 {/* Hero Profile */}
                 <AnimatedSection>
-                    <div className="glass-card" style={{ padding: '2.5rem', marginBottom: '3rem' }}>
+                    <div className="glass-card" style={{ padding: isMobile ? '1.25rem' : '2.5rem', marginBottom: '3rem' }}>
                         <div className="profile-card-layout">
                             <div style={{ flexShrink: 0 }}>
                                 <div style={{
@@ -211,11 +213,11 @@ export default function About() {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                                 {skills.map((skill, i) => (
                                     <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <span style={{ fontWeight: 600, fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 4 }}>
+                                            <span style={{ fontWeight: 600, fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: 6, flex: 1, minWidth: 140 }}>
                                                 {skill.icon} {skill.name}
                                             </span>
-                                            <span style={{ fontSize: '0.75rem', fontWeight: 700, opacity: 0.5 }}>{skill.category}</span>
+                                            <span style={{ fontSize: '0.7rem', fontWeight: 700, opacity: 0.5, textTransform: 'uppercase' }}>{skill.category}</span>
                                         </div>
                                         <div className="progress-track" style={{ height: 6 }}>
                                             <motion.div
@@ -242,16 +244,21 @@ export default function About() {
                                     <motion.div
                                         key={edu.id}
                                         className="glass-card"
-                                        style={{ padding: '1.25rem', cursor: 'pointer', position: 'relative', border: '1px solid var(--color-border)' }}
+                                        style={{
+                                            padding: isMobile ? '1rem' : '1.25rem',
+                                            cursor: 'pointer',
+                                            position: 'relative',
+                                            border: '1px solid var(--color-border)'
+                                        }}
                                         onClick={() => setSelectedEdu(edu)}
                                         whileHover={{ scale: 1.02, x: 5, borderColor: 'var(--color-accent)' }}
                                     >
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <div style={{ maxWidth: '85%' }}>
-                                                <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 2 }}>{edu.degree}</h4>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
+                                            <div style={{ flex: 1 }}>
+                                                <h4 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 4, lineHeight: 1.3 }}>{edu.degree}</h4>
                                                 <p style={{ fontSize: '0.8rem', color: 'var(--color-text-tertiary)', fontWeight: 500 }}>{edu.school}</p>
                                             </div>
-                                            <ExternalLink size={14} style={{ opacity: 0.3 }} />
+                                            <ExternalLink size={14} style={{ opacity: 0.3, flexShrink: 0, marginTop: 4 }} />
                                         </div>
                                     </motion.div>
                                 ))}
@@ -362,10 +369,10 @@ export default function About() {
                                                 <div key={i} className="glass-card" style={{ padding: '1rem', border: '1px solid var(--color-border)' }}>
                                                     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                                                         <div style={{ color: 'var(--color-warm)', flexShrink: 0 }}><Trophy size={18} /></div>
-                                                        <div>
-                                                            <h4 style={{ fontSize: '0.85rem', fontWeight: 700, lineHeight: 1.3 }}>{award.title}</h4>
-                                                            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-tertiary)', fontWeight: 500 }}>{award.org}</p>
-                                                            <span style={{ fontSize: '0.65rem', padding: '2px 8px', background: 'var(--color-bg-secondary)', borderRadius: 10, marginTop: 4, display: 'inline-block' }}>
+                                                        <div style={{ minWidth: 0 }}>
+                                                            <h4 style={{ fontSize: '0.85rem', fontWeight: 700, lineHeight: 1.3, marginBottom: 4 }}>{award.title}</h4>
+                                                            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-tertiary)', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{award.org}</p>
+                                                            <span style={{ fontSize: '0.65rem', padding: '2px 8px', background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: 10, marginTop: 4, display: 'inline-block' }}>
                                                                 {award.badge}
                                                             </span>
                                                         </div>
@@ -454,10 +461,13 @@ const styles = {
     },
     tabHeader: {
         display: 'flex',
-        gap: 24,
+        gap: 16, // Reduced from 24
         marginBottom: '2rem',
         borderBottom: '1px solid var(--color-border)',
-        paddingBottom: 4
+        paddingBottom: 4,
+        overflowX: 'auto', // Allow scroll on small screens
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none',
     },
     tabBtn: {
         padding: '0.75rem 0',

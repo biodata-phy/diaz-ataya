@@ -114,7 +114,7 @@ const styles = {
     inner: {
         maxWidth: 1200,
         margin: '0 auto',
-        padding: '0 1.5rem',
+        padding: '0 1rem',
         height: 64,
         display: 'flex',
         alignItems: 'center',

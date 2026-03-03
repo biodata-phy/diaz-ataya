@@ -37,6 +37,7 @@ const projects = [
 
 export default function Projects() {
     const [activeFilter, setActiveFilter] = useState('All')
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
     const filtered = activeFilter === 'All'
         ? projects
@@ -46,7 +47,7 @@ export default function Projects() {
         <PageTransition>
             <div className="container section">
                 {/* Header */}
-                <div style={{ marginBottom: '2.5rem' }}>
+                <div style={{ marginBottom: isMobile ? '1.5rem' : '2.5rem' }}>
                     <AnimatedSection>
                         <span className="badge badge-accent" style={{ marginBottom: 12 }}>
                             <Globe size={12} /> Social Impact
@@ -98,14 +99,29 @@ export default function Projects() {
 
                 {/* Filter Tabs */}
                 <AnimatedSection delay={0.2}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '2rem', flexWrap: 'wrap' }}>
-                        <Filter size={16} style={{ color: 'var(--color-text-tertiary)' }} />
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        marginBottom: '2rem',
+                        overflowX: 'auto',
+                        paddingBottom: 8,
+                        msOverflowStyle: 'none',
+                        scrollbarWidth: 'none',
+                        WebkitOverflowScrolling: 'touch'
+                    }}>
+                        <Filter size={16} style={{ color: 'var(--color-text-tertiary)', flexShrink: 0 }} />
                         {categories.map(cat => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveFilter(cat)}
                                 className={activeFilter === cat ? 'btn btn-primary' : 'btn btn-ghost'}
-                                style={{ padding: '0.4rem 1rem', fontSize: '0.8rem', borderRadius: 'var(--radius-full)' }}
+                                style={{
+                                    padding: '0.4rem 1rem',
+                                    fontSize: '0.8rem',
+                                    borderRadius: 'var(--radius-full)',
+                                    whiteSpace: 'nowrap'
+                                }}
                             >
                                 {cat}
                             </button>
@@ -155,7 +171,7 @@ export default function Projects() {
                 <AnimatedSection>
                     <div style={{
                         position: 'relative', overflow: 'hidden', background: 'var(--color-accent)',
-                        borderRadius: 'var(--radius-2xl)', padding: '4rem 3rem', textAlign: 'center',
+                        borderRadius: 'var(--radius-2xl)', padding: isMobile ? '2.5rem 1.5rem' : '4rem 3rem', textAlign: 'center',
                     }}>
                         <div className="floating-shape" style={{
                             width: 500, height: 500, background: 'rgba(255,255,255,0.1)',
