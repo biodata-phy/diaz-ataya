@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 
 const photos = [
-    'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=40&w=400',
-    'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=40&w=400',
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=40&w=400',
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=40&w=400',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=40&w=400',
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=40&w=400',
+    'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=30&w=200',
+    'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=30&w=200',
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=30&w=200',
+    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=30&w=200',
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=30&w=200',
+    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=30&w=200',
 ]
 
 export default function FloatingPhotos() {
